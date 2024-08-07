@@ -8,7 +8,8 @@ const USER = {
     fav_music: {
         bands: [
             'Rammstein', 'Interpol', 'TOOL', 'Black Sabbath'
-        ]}
+        ]
+    }
 }
 
 const users = [
@@ -30,36 +31,33 @@ const users = [
         age: '23',
         fav_music: {
             bands: [
-               'Band 1', 'Band 2', 'Band 3', 'Band 4'
+                'Band 1', 'Band 2', 'Band 3', 'Band 4'
             ]
         }
     }
 ]
 
-
-
-//selectores
-const card =document.getElementById("card-container");
+// Selectores
+const card = document.getElementById("card-container");
 const cardImgContainer = document.getElementById("card-img-container");
 
-
-//Crear elemento img
+// Crear elemento img
 const imageElement = document.createElement("img");
 imageElement.src = IMAGE_URL;
 imageElement.alt = "User profile photo";
 
-//Creamos elemento titulo -> card
+// Crear elementos de texto
 const cardTitleElement = document.createElement("h3");
 cardTitleElement.classList.add("card-title");
+
 const cardAgeElement = document.createElement("p");
 const cardDescElement = document.createElement("p");
 
-
-//Poblar
+// Poblar elementos de texto
 cardTitleElement.textContent = USER.username;
-cardAgeElement.textContent = USER.age;
-cardDescElement.textContent = USER.description;
+cardAgeElement.textContent = `Edad: ${USER.age}`;
+cardDescElement.textContent = `Descripción: ${USER.description}`;
 
-//Renderizar
+// Renderizar
 cardImgContainer.appendChild(imageElement);
-card.append(cardTitleElement , cardAgeElement,cardDescElement);
+card.append(cardTitleElement, cardAgeElement, cardDescElement);
